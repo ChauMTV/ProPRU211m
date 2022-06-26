@@ -1,2 +1,3 @@
-# ProPRU211m
-Gaem project Pru211m
+# PRU-Game-Ios
+
+chắc là được
