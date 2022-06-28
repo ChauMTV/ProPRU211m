@@ -20,11 +20,13 @@ public class CharacterMovement : MonoBehaviour
     public float jumping;
     public bool canDoubleJump;
     private bool isJump;
+    private float maxrunspeed =12;
 
 
-    [SerializeField] private float speed = 7f;
+    [SerializeField] private float speed = 4;
     [SerializeField] private float rollingSpeed = 16f;
     [SerializeField] private float jumpspeed = 12f;
+    [SerializeField] private float acceleration = 0.0006f;
 
 
     private enum MovementState { idle, running, jumping, falling };
@@ -74,20 +76,40 @@ public class CharacterMovement : MonoBehaviour
     }
     private void MovementPlayer()
     {
-        if (moveLeft)
+        if (moveLeft==true)
         {
-            horizontalMove = -speed;
+            
+            horizontalMove = -(speed += acceleration * 0.1f);
+            if(speed> maxrunspeed)
+            {
+                speed = maxrunspeed;
+            }
         }
+        //if (moveLeft == false && moveRight == false)
+        //{
+        //    if (speed > 0 && horizontalMove>0)
+        //    {
+        //        horizontalMove--;
 
-        else if (moveRight)
+        //    }
+        //}
+
+        else if (moveRight==true)
         {
-            horizontalMove = speed;
+
+            horizontalMove = speed += acceleration * 0.1f;
+            if (speed > maxrunspeed)
+            {
+                speed = maxrunspeed;
+            }
         }
         else
         {
             horizontalMove = 0;
+            speed = 1;
         }
     }
+
     public void Jump()
     {
         if (rb.velocity.y == 0 && jump == true)
