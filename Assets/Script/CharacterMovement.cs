@@ -74,12 +74,12 @@ public class CharacterMovement : MonoBehaviour
 
         if (isRolling)
         {
-            if(rollDir < 0 && rb.velocity.x < 0f)
+            if(rollDir < 0 && rb.velocity.x < 0f && rb.velocity.y >-3f)
             {
                 state = MovementState.rolling;
                 sprite.flipX = true;
             }
-            else if (rollDir > 0 && rb.velocity.x > 0f)
+            else if (rollDir > 0 && rb.velocity.x > 0f && rb.velocity.y > -3f)
             {
                 state = MovementState.rolling;
                 sprite.flipX = false;
