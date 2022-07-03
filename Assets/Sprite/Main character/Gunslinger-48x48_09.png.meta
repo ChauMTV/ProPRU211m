@@ -124,11 +124,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gunslinger-48x48_09_0
+      name: roll_0
       rect:
         serializedVersion: 2
         x: 0
@@ -136,20 +148,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6f5f0aad3debb04d96481ee41a641f7
-      internalID: -2046964450
+      spriteID: b1a6cb6764bd71f499a7c5ce9fccf14c
+      internalID: -618758955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger-48x48_09_1
+      name: roll_1
       rect:
         serializedVersion: 2
         x: 48
@@ -157,20 +169,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fffb6073392bb3849bbb671a85dbce8a
-      internalID: 1481675229
+      spriteID: 83da879b08a1b8743824fab76952c3a5
+      internalID: 1071853993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger-48x48_09_2
+      name: roll_2
       rect:
         serializedVersion: 2
         x: 96
@@ -178,41 +190,41 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 037e364222972584e89bd7719ad820b7
-      internalID: 1293010429
+      spriteID: 7984a95737a06864e90deccd91b25619
+      internalID: -1286365257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger-48x48_09_3
+      name: roll_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 145
         y: 0
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f822c3ff197e7e4c9e89deea6b960bf
-      internalID: 1623384530
+      spriteID: dfd1e392bad4ea7458975cfd760b2b39
+      internalID: 1285051236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger-48x48_09_4
+      name: roll_4
       rect:
         serializedVersion: 2
         x: 192
@@ -220,20 +232,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20e8520af0523654f8cce097d0965c2c
-      internalID: -2045573237
+      spriteID: 37e4ddf8f25853e48a69b251b768139a
+      internalID: 143796107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger-48x48_09_5
+      name: roll_5
       rect:
         serializedVersion: 2
         x: 240
@@ -241,20 +253,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23184c0ccb4d4fa4ba6ba0242ac1acce
-      internalID: 274583347
+      spriteID: bebacd45e05f9ee4d8edd4049eb0c573
+      internalID: 567520905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger-48x48_09_6
+      name: roll_6
       rect:
         serializedVersion: 2
         x: 288
@@ -262,20 +274,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d3eac766e602654fb316cb3e9ae2594
-      internalID: 327668575
+      spriteID: 744d1d53b8e0c0a4a95f47f3bf035d33
+      internalID: -836005959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger-48x48_09_7
+      name: roll_7
       rect:
         serializedVersion: 2
         x: 336
@@ -283,20 +295,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 285fd0b65f5cc204a9027c97c86ae932
-      internalID: -635635863
+      spriteID: 470256a0614f08d4b9c6039f208e0333
+      internalID: 395190815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunslinger-48x48_09_8
+      name: roll_8
       rect:
         serializedVersion: 2
         x: 384
@@ -304,14 +316,14 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07d26f81a672ed04eaf2e115800817a4
-      internalID: -1563335804
+      spriteID: c2a396f22effedf42a2ddfe24fa34433
+      internalID: -533852576
       vertices: []
       indices: 
       edges: []
@@ -327,15 +339,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gunslinger-48x48_09_4: -2045573237
-      Gunslinger-48x48_09_7: -635635863
-      Gunslinger-48x48_09_5: 274583347
-      Gunslinger-48x48_09_8: -1563335804
-      Gunslinger-48x48_09_2: 1293010429
-      Gunslinger-48x48_09_3: 1623384530
-      Gunslinger-48x48_09_0: -2046964450
-      Gunslinger-48x48_09_6: 327668575
-      Gunslinger-48x48_09_1: 1481675229
+      roll_1: 1071853993
+      roll_5: 567520905
+      roll_3: 1285051236
+      roll_6: -836005959
+      roll_7: 395190815
+      roll_4: 143796107
+      roll_2: -1286365257
+      roll_8: -533852576
+      roll_0: -618758955
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

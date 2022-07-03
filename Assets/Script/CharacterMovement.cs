@@ -11,16 +11,21 @@ public class CharacterMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private float horizontalMove;
     bool isRolling;
-    bool canRoll =true;
+    bool canRoll = true;
     private float rollDir = 1;
     private float rollingTime = 0.4f;
     private float rollingCoolDown = 1f;
+    public float JumpTimerCounter;
+    public float jumpTime;
+    private bool isJump;
+    private float jump = 0;
+
 
     [SerializeField] private float speed = 7f;
     [SerializeField] private float rollingSpeed = 21f;
     [SerializeField] private float jumpspeed = 12f;
 
-    private enum MovementState {idle, running, jumping, falling ,rolling};
+    private enum MovementState { idle, running, jumping, falling, rolling };
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +43,9 @@ public class CharacterMovement : MonoBehaviour
             rollDir = horizontalMove;
         }
         horizontalMove = CrossPlatformInputManager.GetAxisRaw("Horizontal");
-        
-        if (CrossPlatformInputManager.GetButtonDown("Roll") && canRoll == true && rb.velocity.y ==0)
+        jump = CrossPlatformInputManager.GetAxisRaw("Vertical");
+        Jump(jump);
+        if (CrossPlatformInputManager.GetButtonDown("Roll") && canRoll == true && rb.velocity.y == 0)
         {
             if (Roll() != null)
             {
@@ -50,12 +56,31 @@ public class CharacterMovement : MonoBehaviour
         UpdateAnimationState();
     }
 
-    public void Jump()
+    public float Jump( float jump)
     {
-        if (rb.velocity.y == 0)
+        if (rb.velocity.y == 0 && jump > 0)
         {
+            isJump = true;
+            JumpTimerCounter = jumpTime;
             rb.velocity = Vector2.up * jumpspeed;
         }
+        if (jump > 0 && isJump == true)
+        {
+            if (JumpTimerCounter > 0)
+            {
+                rb.velocity = Vector2.up * jumpspeed;
+                JumpTimerCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJump = false;
+            }
+        }
+        else if (jump == 0)
+        {
+            isJump = false;
+        }
+        return 1;
     }
 
     private IEnumerator Roll()
@@ -74,12 +99,12 @@ public class CharacterMovement : MonoBehaviour
 
         if (isRolling)
         {
-            if(rollDir < 0 && rb.velocity.x < 0f && rb.velocity.y >-3f)
+            if (rollDir < 0 && rb.velocity.x < 0f)
             {
                 state = MovementState.rolling;
                 sprite.flipX = true;
             }
-            else if (rollDir > 0 && rb.velocity.x > 0f && rb.velocity.y > -3f)
+            else if (rollDir > 0 && rb.velocity.x > 0f)
             {
                 state = MovementState.rolling;
                 sprite.flipX = false;
