@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 95091390}
   - component: {fileID: 95091389}
   - component: {fileID: 95091388}
+  - component: {fileID: 95091391}
   m_Layer: 5
   m_Name: JumpButton
   m_TagString: Untagged
@@ -205,19 +206,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 95091389}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 725369085}
-        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &95091389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +245,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95091386}
   m_CullTransparentMesh: 1
+--- !u!114 &95091391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95091386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab98b66288df7b4fa182075f2f12bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisName: Vertical
+  axisValue: 1
+  responseSpeed: 10000
+  returnToCentreSpeed: 10000
 --- !u!1001 &184676925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -346,10 +351,10 @@ RectTransform:
   m_Father: {fileID: 1278043563}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -755.11, y: 688}
-  m_SizeDelta: {x: 649.7711, y: 77.2445}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 324.88556, y: -38.622253}
+  m_SizeDelta: {x: 649.7711, y: 77.24451}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316288933
 MonoBehaviour:
@@ -1129,6 +1134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b023f1a0e55fb57499230fe5a5796e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpTimerCounter: 0
+  jumpTime: 0
   speed: 6
   rollingSpeed: 16
   jumpspeed: 12
@@ -3185,10 +3192,10 @@ RectTransform:
   m_Father: {fileID: 1278043563}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -755.11, y: 688}
-  m_SizeDelta: {x: 649.7711, y: 77.2445}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 324.88556, y: -38.622253}
+  m_SizeDelta: {x: 649.7711, y: 77.24451}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1841827865
 MonoBehaviour:
