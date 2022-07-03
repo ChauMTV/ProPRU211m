@@ -10,9 +10,10 @@ public class Monster : MonoBehaviour
     int health = 100;
 
     // scoring support
-    const int MonsterPoints = 1;
+    const int MonsterPoints = 10;
+
     /// <summary>
-    /// Take damage on collision with fish
+    /// Take damage on collision with monster
     /// </summary>
     /// <param name="coll">collision info</param>
     /// void OnCollisionEnter2D(Collision2D coll)
@@ -30,12 +31,13 @@ public class Monster : MonoBehaviour
           {  
                 // update score
                HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
-                hud.AddPoints(MonsterPoints);
+               hud.AddPoints(MonsterPoints);
+                
                 // destroy teddy bear
                 Instantiate(prefabExplosion, transform.position,
                     Quaternion.identity);
                 Destroy(gameObject);
-                Destroy(collisionObject);
+              //  Destroy(collisionObject);
             }
         }
     }

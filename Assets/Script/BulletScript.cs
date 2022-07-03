@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 1f;
     public Rigidbody2D rb;
+
+ 
 
     //start destroy
     #region Fields
@@ -57,13 +59,14 @@ public class BulletScript : MonoBehaviour
     }
 
     #endregion
-    private void OnTriggerEnter2D(Collider2D collision)
+  private void OnTriggerEnter2D(Collider2D collision)
     {
+
         Destroy(gameObject);
     }
     //end destroy 
 
-    void Start()
+   void Start()
     {
         rb.velocity = transform.right * speed;
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5506029071283629706}
   - component: {fileID: 1296851888621601987}
   - component: {fileID: 1065381418799570067}
+  - component: {fileID: -971486761692333242}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: bullet
@@ -138,4 +139,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 5506029071283629706}
-  prefabExplosion: {fileID: 0}
+  prefabExplosion: {fileID: 4622016524002287189, guid: 20d3be60719f5a749bdbca1e752662ec, type: 3}
+--- !u!61 &-971486761692333242
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560860228665936397}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

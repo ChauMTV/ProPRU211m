@@ -1,35 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator am;
     private SpriteRenderer sprite;
-    private bool moveLeft;
-    private bool moveRight;
-    private bool jump;
     private float horizontalMove;
-    private Vector2 rollingDir;
-    private float rollingTime = 0.2f;
+    bool isRolling;
+    bool canRoll = true;
+    private float rollDir = 1;
+    private float rollingTime = 0.4f;
     private float rollingCoolDown = 1f;
-    public float JumpTimeCounter;
-    public float jumping;
-    public bool canDoubleJump;
+    public float JumpTimerCounter;
+    public float jumpTime;
     private bool isJump;
-    private float maxrunspeed =12;
+    private float jump = 0;
 
 
-    [SerializeField] private float speed = 4;
-    [SerializeField] private float rollingSpeed = 16f;
+    [SerializeField] private float speed = 7f;
+    [SerializeField] private float rollingSpeed = 21f;
     [SerializeField] private float jumpspeed = 12f;
-    [SerializeField] private float acceleration = 0.0006f;
 
-
-    private enum MovementState { idle, running, jumping, falling };
+    private enum MovementState { idle, running, jumping, falling, rolling };
 
     // Start is called before the first frame update
     void Start()
@@ -37,142 +33,125 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         am = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        moveLeft = false;
-        moveRight = false;
-        jump = false;
-    }
-    public void PointerDownLeft()
-    {
-        moveLeft = true;
-    }
-    public void PointerUpLeft()
-    {
-        moveLeft = false;
-    }
-    public void PointerDownRight()
-    {
-        moveRight = true;
-    }
-    public void PointerUpRight()
-    {
-        moveRight = false;
-    }
-    public void PointerUpJump()
-    {
-        jump = false;
-    }
-    public void PointerDownJump()
-    {
-        jump = true;
     }
     // Update is called once per frame
 
     void Update()
     {
-        MovementPlayer();
-        Jump();
+        if (horizontalMove != 0)
+        {
+            rollDir = horizontalMove;
+        }
+        horizontalMove = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+        jump = CrossPlatformInputManager.GetAxisRaw("Vertical");
+        Jump(jump);
+        if (CrossPlatformInputManager.GetButtonDown("Roll") && canRoll == true && rb.velocity.y == 0)
+        {
+            if (Roll() != null)
+            {
+                StopCoroutine(Roll());
+            }
+            StartCoroutine(Roll());
+        }
         UpdateAnimationState();
-
-    }
-    private void MovementPlayer()
-    {
-        if (moveLeft==true)
-        {
-            
-            horizontalMove = -(speed += acceleration * 0.1f);
-            if(speed> maxrunspeed)
-            {
-                speed = maxrunspeed;
-            }
-        }
-        //if (moveLeft == false && moveRight == false)
-        //{
-        //    if (speed > 0 && horizontalMove>0)
-        //    {
-        //        horizontalMove--;
-
-        //    }
-        //}
-
-        else if (moveRight==true)
-        {
-
-            horizontalMove = speed += acceleration * 0.1f;
-            if (speed > maxrunspeed)
-            {
-                speed = maxrunspeed;
-            }
-        }
-        else
-        {
-            horizontalMove = 0;
-            speed = 1;
-        }
     }
 
-    public void Jump()
+    public float Jump( float jump)
     {
-        if (rb.velocity.y == 0 && jump == true)
+        if (rb.velocity.y == 0 && jump > 0)
         {
             isJump = true;
-            JumpTimeCounter = jumping;
+            JumpTimerCounter = jumpTime;
             rb.velocity = Vector2.up * jumpspeed;
         }
-        if (jump == true && isJump == true)
+        if (jump > 0 && isJump == true)
         {
-            if (JumpTimeCounter > 0)
+            if (JumpTimerCounter > 0)
             {
                 rb.velocity = Vector2.up * jumpspeed;
-                JumpTimeCounter -= Time.deltaTime;
+                JumpTimerCounter -= Time.deltaTime;
             }
             else
             {
                 isJump = false;
             }
         }
-        if (jump == false)
+        else if (jump == 0)
         {
             isJump = false;
         }
-
+        return 1;
     }
 
-
+    private IEnumerator Roll()
+    {
+        isRolling = true;
+        canRoll = false;
+        yield return new WaitForSeconds(rollingTime);
+        isRolling = false;
+        yield return new WaitForSeconds(rollingCoolDown);
+        canRoll = true;
+    }
 
     private void UpdateAnimationState()
     {
         MovementState state;
-        if (horizontalMove < 0f)
-        {
-            state = MovementState.running;
-            sprite.flipX = true;
-        }
 
-        else if (horizontalMove > 0f)
+        if (isRolling)
         {
-            state = MovementState.running;
-            sprite.flipX = false;
+            if (rollDir < 0 && rb.velocity.x < 0f)
+            {
+                state = MovementState.rolling;
+                sprite.flipX = true;
+            }
+            else if (rollDir > 0 && rb.velocity.x > 0f)
+            {
+                state = MovementState.rolling;
+                sprite.flipX = false;
+            }
+            else
+            {
+                state = MovementState.idle;
+            }
+            am.SetInteger("state", (int)state);
         }
         else
         {
-            state = MovementState.idle;
-        }
 
-        if (rb.velocity.y > .1f)
-        {
-            state = MovementState.jumping;
-        }
-        else if (rb.velocity.y < -1f)
-        {
-            state = MovementState.falling;
-        }
+            if (horizontalMove < 0f)
+            {
+                state = MovementState.running;
+                sprite.flipX = true;
+            }
 
-        am.SetInteger("state", (int)state);
+            else if (horizontalMove > 0f)
+            {
+                state = MovementState.running;
+                sprite.flipX = false;
+            }
+            else
+            {
+                state = MovementState.idle;
+            }
+
+            if (rb.velocity.y > .1f)
+            {
+                state = MovementState.jumping;
+            }
+            else if (rb.velocity.y < -1f)
+            {
+                state = MovementState.falling;
+            }
+
+            am.SetInteger("state", (int)state);
+        }
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
+        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+        if (isRolling)
+        {
+            rb.AddForce(new Vector2(rollDir * rollingSpeed, 0), ForceMode2D.Impulse);
+        }
     }
-
-
 }

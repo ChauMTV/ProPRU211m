@@ -40,11 +40,6 @@ public class HUD : MonoBehaviour
         //scoreText.color = Color.white;
     }
 
-    internal void AddCoin()
-    {
-        throw new NotImplementedException();
-    }
-
     /// <summary>
     /// Adds the given points to the score
     /// </summary>
