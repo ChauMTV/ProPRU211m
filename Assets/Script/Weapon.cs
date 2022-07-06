@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
 
     public Transform GunPoint;
     public GameObject bulletPrefab;
-    public int gunPower=1;
+    public int gunPower = 1;
 
 
     // Update is called once per frame
@@ -23,5 +23,6 @@ public class Weapon : MonoBehaviour
 
 
     }
-    }
+
+}
 
