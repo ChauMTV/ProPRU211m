@@ -1596,7 +1596,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  rb: {fileID: 0}
   prefabExplosion: {fileID: 0}
 --- !u!114 &1199092312
 MonoBehaviour:
@@ -24976,11 +24975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1919011633792034753, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.07
+      value: 3.46
       objectReference: {fileID: 0}
     - target: {fileID: 1919011633792034753, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.86
+      value: -4.37
       objectReference: {fileID: 0}
     - target: {fileID: 1919011633792034753, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25016,15 +25015,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1919011633792034754, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1919011633792034754, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
       propertyPath: m_SortingLayerID
       value: 2036095273
       objectReference: {fileID: 0}
+    - target: {fileID: 1919011633792034755, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919011633792034755, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919011633792034756, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919011633792034756, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1919011633792034757, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
       propertyPath: m_Name
       value: Spider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919011633792034767, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cf0d5d7dc8734f4599d717f12ab4f55, type: 3}
