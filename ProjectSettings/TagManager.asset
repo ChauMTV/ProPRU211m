@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - bullet
+  - Enemy
+  - coin
+  - monster
+  - HUD
   layers:
   - Default
   - TransparentFX
@@ -13,10 +18,10 @@ TagManager:
   - UI
   - 
   - 
+  - Ground
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -40,4 +45,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 4251581497
+    locked: 0
+  - name: ForeGround
+    uniqueID: 2482315323
+    locked: 0
+  - name: Ground
+    uniqueID: 1336100467
+    locked: 0
+  - name: Trap
+    uniqueID: 3737149329
+    locked: 0
+  - name: Enemy
+    uniqueID: 1062513351
     locked: 0

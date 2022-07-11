@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hurt_1
+      name: Hurt_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5c5f18515e4c0b41886f04a5c6223d1
-      internalID: 1823360363
+      spriteID: 8ab8c5e562275b644a12a6954754483f
+      internalID: 926943934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hurt_2
+      name: Hurt_1
       rect:
         serializedVersion: 2
         x: 48
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1656a43825ca0c14494c14210bd27d04
-      internalID: -1606984245
+      spriteID: e448c3f3da9e6de43bf4af24e27f0431
+      internalID: -647487342
       vertices: []
       indices: 
       edges: []
@@ -192,8 +192,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hurt_2: -1606984245
-      hurt_1: 1823360363
+      Hurt_0: 926943934
+      Hurt_1: -647487342
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

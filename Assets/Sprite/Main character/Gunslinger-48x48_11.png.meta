@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: die_1
+      name: Die_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 131090c35e5a1744f99a5ec0369eafd8
-      internalID: -799669096
+      spriteID: ce99d66f3008e734aaceab67e496ec6b
+      internalID: 2082938059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: die_2
+      name: Die_1
       rect:
         serializedVersion: 2
         x: 48
@@ -175,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4dc2db576573534f94f73763cac9633
-      internalID: 1942004259
+      spriteID: dafe50bd2d2dcd244ae09de8c9a6e74f
+      internalID: -2121053533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: die_3
+      name: Die_2
       rect:
         serializedVersion: 2
         x: 96
@@ -196,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 105634ace9da0884fba00ec81d7ce5d6
-      internalID: -1321902087
+      spriteID: 7cf486e545213b94ba7c4ab644fb5713
+      internalID: 1971362508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: die_4
+      name: Die_3
       rect:
         serializedVersion: 2
         x: 144
@@ -217,8 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a08e911c471e46247b020f3cb09ef747
-      internalID: -852754498
+      spriteID: cd6ee264ca9d2da4fba6c51aaf9f2e83
+      internalID: -287665591
       vertices: []
       indices: 
       edges: []
@@ -234,10 +234,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      die_4: -852754498
-      die_2: 1942004259
-      die_3: -1321902087
-      die_1: -799669096
+      Die_0: 2082938059
+      Die_3: -287665591
+      Die_1: -2121053533
+      Die_2: 1971362508
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
