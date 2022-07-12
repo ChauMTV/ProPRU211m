@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpTimerCounter: 0
-  jumpTime: 0
+  jumpTime: 0.2
   speed: 6
   rollingSpeed: 16
   jumpspeed: 12
