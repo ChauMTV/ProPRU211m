@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    void Shoot()
+   public void Shoot()
     {
 
         float angle = playerdirection.isRight ? 0f : 180f;
