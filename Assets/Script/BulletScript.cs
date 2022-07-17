@@ -15,7 +15,7 @@ public class BulletScript : MonoBehaviour
     [SerializeField]
     GameObject prefabExplosion;
 
-    int damage = 100;
+    public int damage = 50;
 
     #endregion
 
@@ -68,7 +68,7 @@ public class BulletScript : MonoBehaviour
 
    void Start()
     {
-        rb.velocity = transform.right * speed;
+      
 
     }
 
@@ -78,5 +78,9 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
 
+    }
+    public void FixedUpdate()
+    {
+        rb.velocity = transform.right * speed;
     }
 }

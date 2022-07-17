@@ -2,26 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator am;
     private SpriteRenderer sprite;
-    private bool moveLeft;
-    private bool moveRight;
-    private float horizontalMove;
-    private Vector2 rollingDir;
-    private float rollingTime = 0.2f;
+    public float horizontalMove;
+    bool isRolling;
+    bool canRoll = true;
+    private float rollDir = 1;
+    private float rollingTime = 0.4f;
     private float rollingCoolDown = 1f;
+    public float JumpTimerCounter;
+    public float jumpTime;
+    private bool isJump;
+    private float jump = 0;
+    [HideInInspector] public bool isRight = true;
 
 
-
-    [SerializeField] private float speed = 7f;
-    [SerializeField] private float rollingSpeed = 16f;
+    [SerializeField] public float speed = 7f;
+    [SerializeField] private float rollingSpeed = 21f;
     [SerializeField] private float jumpspeed = 12f;
 
-    private enum MovementState {idle, running, jumping, falling };
+    private enum MovementState { idle, running, jumping, falling, rolling };
 
     // Start is called before the first frame update
     void Start()
@@ -29,92 +34,132 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         am = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        moveLeft = false;
-        moveRight = false;
-    }
-    public void PointerDownLeft()
-    {
-        moveLeft = true;
-    }
-    public void PointerUpLeft()
-    {
-        moveLeft = false;
-    }
-    public void PointerDownRight()
-    {
-        moveRight = true;
-    }
-    public void PointerUpRight()
-    {
-        moveRight = false;
     }
     // Update is called once per frame
 
     void Update()
     {
-        MovementPlayer();
+        if (horizontalMove != 0)
+        {
+            rollDir = horizontalMove;
+        }
+        horizontalMove = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+        jump = CrossPlatformInputManager.GetAxisRaw("Vertical");
+        Jump(jump);
+        if (CrossPlatformInputManager.GetButtonDown("Roll") && canRoll == true && rb.velocity.y == 0)
+        {
+            if (Roll() != null)
+            {
+                StopCoroutine(Roll());
+            }
+            StartCoroutine(Roll());
+        }
         UpdateAnimationState();
-        
     }
-    private void MovementPlayer()
-    {
-        if (moveLeft)
-        {
-            horizontalMove = -speed;
-        }
 
-        else if (moveRight)
-        {
-            horizontalMove = speed;
-        }
-        else
-        {
-            horizontalMove = 0;
-        }
-    }
-    public void Jump()
+    public float Jump( float jump)
     {
-        if (rb.velocity.y == 0)
+        if (rb.velocity.y == 0 && jump > 0)
         {
+            isJump = true;
+            JumpTimerCounter = jumpTime;
             rb.velocity = Vector2.up * jumpspeed;
         }
+        if (jump > 0 && isJump == true)
+        {
+            if (JumpTimerCounter > 0)
+            {
+                rb.velocity = Vector2.up * jumpspeed;
+                JumpTimerCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJump = false;
+            }
+        }
+        else if (jump == 0)
+        {
+            isJump = false;
+        }
+        return 1;
     }
 
+    private IEnumerator Roll()
+    {
+        isRolling = true;
+        canRoll = false;
+        yield return new WaitForSeconds(rollingTime);
+        isRolling = false;
+        yield return new WaitForSeconds(rollingCoolDown);
+        canRoll = true;
+    }
 
     private void UpdateAnimationState()
     {
         MovementState state;
-        if (horizontalMove < 0f)
-        {
-            state = MovementState.running;
-            sprite.flipX = true;
-        }
 
-        else if (horizontalMove > 0f)
+        if (isRolling)
         {
-            state = MovementState.running;
-            sprite.flipX = false;
+            if (rollDir < 0 && rb.velocity.x < 0f)
+            {
+                state = MovementState.rolling;
+                sprite.flipX = true;
+            }
+            else if (rollDir > 0 && rb.velocity.x > 0f)
+            {
+                state = MovementState.rolling;
+                sprite.flipX = false;
+            }
+            else
+            {
+                state = MovementState.idle;
+            }
+            am.SetInteger("state", (int)state);
         }
         else
         {
-            state = MovementState.idle;
-        }
 
-        if(rb.velocity.y > .1f)
-        {
-            state = MovementState.jumping;
-        }
-        else if (rb.velocity.y < -1f)
-        {
-            state = MovementState.falling;
-        }
+            if (horizontalMove < 0f)
+            {
+                
+                isRight = false;
+                state = MovementState.running;
+                sprite.flipX = true;
 
-        am.SetInteger("state", (int)state);
+            }
+
+            else if (horizontalMove > 0f)
+            {
+                
+                isRight = true;
+                state = MovementState.running;
+                sprite.flipX = false;
+            }
+            else
+            {
+                state = MovementState.idle;
+            }
+
+            if (rb.velocity.y > .1f)
+            {
+                state = MovementState.jumping;
+            }
+            else if (rb.velocity.y < -1f)
+            {
+                state = MovementState.falling;
+            }
+
+            am.SetInteger("state", (int)state);
+        }
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
+        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+
+       
+        if (isRolling)
+        {
+            rb.AddForce(new Vector2(rollDir * rollingSpeed, 0), ForceMode2D.Impulse);
+        }
     }
-
-
 }
