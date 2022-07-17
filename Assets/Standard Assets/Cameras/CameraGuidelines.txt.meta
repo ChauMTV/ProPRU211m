@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: 86f4276d9602ff547968823666aa5699
 TextScriptImporter:
   userData: 
   assetBundleName: 
+=======
+fileFormatVersion: 2
+guid: 86f4276d9602ff547968823666aa5699
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9

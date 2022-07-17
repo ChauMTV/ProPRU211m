@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: 139086bdd1c7fd84b81df0968a55ce2d
 folderAsset: yes
@@ -7,3 +8,14 @@ DefaultImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: 139086bdd1c7fd84b81df0968a55ce2d
+folderAsset: yes
+timeCreated: 1436977288
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9

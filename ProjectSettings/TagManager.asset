@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+
+  tags:
+  - wall
+
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9
   layers:
   - Default
   - TransparentFX
@@ -13,7 +20,13 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - 
+=======
+
+  - Ground
+
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9
   - 
   - 
   - 

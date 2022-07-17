@@ -9,7 +9,11 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator am;
     private SpriteRenderer sprite;
+<<<<<<< HEAD
     private float horizontalMove;
+=======
+    public float horizontalMove;
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9
     bool isRolling;
     bool canRoll = true;
     private float rollDir = 1;
@@ -19,9 +23,16 @@ public class CharacterMovement : MonoBehaviour
     public float jumpTime;
     private bool isJump;
     private float jump = 0;
+<<<<<<< HEAD
 
 
     [SerializeField] private float speed = 7f;
+=======
+    [HideInInspector] public bool isRight = true;
+
+
+    [SerializeField] public float speed = 7f;
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9
     [SerializeField] private float rollingSpeed = 21f;
     [SerializeField] private float jumpspeed = 12f;
 
@@ -120,12 +131,25 @@ public class CharacterMovement : MonoBehaviour
 
             if (horizontalMove < 0f)
             {
+<<<<<<< HEAD
                 state = MovementState.running;
                 sprite.flipX = true;
+=======
+                
+                isRight = false;
+                state = MovementState.running;
+                sprite.flipX = true;
+
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9
             }
 
             else if (horizontalMove > 0f)
             {
+<<<<<<< HEAD
+=======
+                
+                isRight = true;
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9
                 state = MovementState.running;
                 sprite.flipX = false;
             }
@@ -149,6 +173,11 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+<<<<<<< HEAD
+=======
+
+       
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9
         if (isRolling)
         {
             rb.AddForce(new Vector2(rollDir * rollingSpeed, 0), ForceMode2D.Impulse);

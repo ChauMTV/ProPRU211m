@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: 5cd052ce7ea5a2f438f599e02de6a390
 ShaderImporter:
   defaultTextures: []
   userData: 
   assetBundleName: 
+=======
+fileFormatVersion: 2
+guid: 5cd052ce7ea5a2f438f599e02de6a390
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9

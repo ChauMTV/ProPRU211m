@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: b51a3e520f9164da198dc59c8acfccd6
 TrueTypeFontImporter:
@@ -13,3 +14,20 @@ TrueTypeFontImporter:
   fontRenderingMode: 0
   userData: 
   assetBundleName: 
+=======
+fileFormatVersion: 2
+guid: b51a3e520f9164da198dc59c8acfccd6
+TrueTypeFontImporter:
+  serializedVersion: 2
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 1
+  characterPadding: 0
+  includeFontData: 1
+  use2xBehaviour: 0
+  fontNames: []
+  customCharacters: 
+  fontRenderingMode: 0
+  userData: 
+  assetBundleName: 
+>>>>>>> 9fe49f0ac3065a8b929536894e187a0afdb251b9
