@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator am;
     private SpriteRenderer sprite;
-    private float horizontalMove;
+    public float horizontalMove;
     bool isRolling;
     bool canRoll = true;
     private float rollDir = 1;
@@ -19,9 +19,10 @@ public class CharacterMovement : MonoBehaviour
     public float jumpTime;
     private bool isJump;
     private float jump = 0;
+    [HideInInspector] public bool isRight = true;
 
 
-    [SerializeField] private float speed = 7f;
+    [SerializeField] public float speed = 7f;
     [SerializeField] private float rollingSpeed = 21f;
     [SerializeField] private float jumpspeed = 12f;
 
@@ -120,12 +121,17 @@ public class CharacterMovement : MonoBehaviour
 
             if (horizontalMove < 0f)
             {
+                
+                isRight = false;
                 state = MovementState.running;
                 sprite.flipX = true;
+
             }
 
             else if (horizontalMove > 0f)
             {
+                
+                isRight = true;
                 state = MovementState.running;
                 sprite.flipX = false;
             }
@@ -149,6 +155,8 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+
+       
         if (isRolling)
         {
             rb.AddForce(new Vector2(rollDir * rollingSpeed, 0), ForceMode2D.Impulse);
