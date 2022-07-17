@@ -4,14 +4,36 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
+
 {
-    // Start is called before the first frame update
+    
+
     public void Playgame()
     {
-        SceneManager.LoadScene("Scense0");
+        SceneManager.LoadScene("LevelSelect");
     }
     public void Quitgame()
     {
         SceneManager.LoadScene("Scense0");
+    }
+
+    public void Slectmap()
+    {
+        SceneManager.LoadScene("Scense0");
+    }
+
+    public void Slectmap1()
+    {
+        SceneManager.LoadScene("SceneTung");
+    }
+
+    public void Slectmap2()
+    {
+        SceneManager.LoadScene("ScenceHuyen");
+    }
+
+    public void BacktoMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
