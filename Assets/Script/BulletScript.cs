@@ -48,6 +48,7 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
 
         }
+        Destroy(gameObject);
     }
     /// <summary>
     /// Destroy when leave game
@@ -64,9 +65,10 @@ public class BulletScript : MonoBehaviour
 
         Destroy(gameObject);
     }
+
     //end destroy 
 
-   void Start()
+    void Start()
     {
       
 
