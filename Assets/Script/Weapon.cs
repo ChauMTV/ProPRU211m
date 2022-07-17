@@ -11,8 +11,8 @@ public class Weapon : MonoBehaviour
     public GameObject powerupBullet;
     public GameObject currentBullet;
     private bool direction;
-    public bool isPoweredUp=false;
-     float timeUntilFire;
+    public bool isPoweredUp;
+    float timeUntilFire;
 
      CharacterMovement playerdirection;
 
