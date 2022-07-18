@@ -11,8 +11,8 @@ public class Weapon : MonoBehaviour
     public GameObject powerupBullet;
     public GameObject currentBullet;
     private bool direction;
-    public bool isPoweredUp=false;
-     float timeUntilFire;
+    public bool isPoweredUp;
+    float timeUntilFire;
 
      CharacterMovement playerdirection;
 
@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    void Shoot()
+   public void Shoot()
     {
 
         float angle = playerdirection.isRight ? 0f : 180f;

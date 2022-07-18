@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator am;
     private SpriteRenderer sprite;
-    public float horizontalMove;
+    private float horizontalMove;
     bool isRolling;
     bool canRoll = true;
     private float rollDir = 1;
@@ -19,6 +19,12 @@ public class CharacterMovement : MonoBehaviour
     public float jumpTime;
     private bool isJump;
     private float jump = 0;
+
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask groundLayer;
+    private bool isTouchGround;
+
     [HideInInspector] public bool isRight = true;
 
 
@@ -39,6 +45,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        isTouchGround = Physics2D.OverlapCircle(groundCheck.position,groundCheckRadius,groundLayer);
         if (horizontalMove != 0)
         {
             rollDir = horizontalMove;
@@ -59,7 +66,7 @@ public class CharacterMovement : MonoBehaviour
 
     public float Jump( float jump)
     {
-        if (rb.velocity.y == 0 && jump > 0)
+        if (isTouchGround==true && jump > 0)
         {
             isJump = true;
             JumpTimerCounter = jumpTime;
