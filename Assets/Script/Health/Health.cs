@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField]
     private float startingHealth;
     private Animator anim;
-    private bool dead;   
+    private bool dead;
     [SerializeField]
     Button btn;
 
@@ -20,6 +19,10 @@ public class Health : MonoBehaviour
     [SerializeField]
     private int numberOfFlashes;
     private SpriteRenderer spriteRenderer;
+
+    private bool invulnerable;
+
+
     public float currenHealth { get; private set; }
     // Start is called before the first frame update
 
@@ -28,10 +31,13 @@ public class Health : MonoBehaviour
         currenHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
     }
     public void TakeDamage(float _damage)
     {
+        if (invulnerable )
+        {
+            return;
+        }
         currenHealth = Mathf.Clamp(currenHealth - _damage, 0, startingHealth);
         if (currenHealth > 0)
         {
@@ -52,13 +58,11 @@ public class Health : MonoBehaviour
                 dead = true;
             }
 
-        }if(currenHealth == 0)
-        {
-            SceneManager.LoadScene("GamoverScense");
         }
     }
     private IEnumerator Invunerability()
     {
+        invulnerable = true;
         Physics2D.IgnoreLayerCollision(10, 11,true);
         //thoi gian bat tu 
         for (int i = 0; i < numberOfFlashes; i++)
@@ -69,7 +73,6 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(IFrameDuration / (numberOfFlashes * 2));
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
+        invulnerable=false;
     }
-
-    
 }

@@ -107,7 +107,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1062513351
+  m_SortingLayerID: -603248301
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -229905866, guid: e5528dbff8697404faa5d5449c980ad6, type: 3}
@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f128eb2972675468c17894a7282a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   walkSpeed: 2
   moveRight: 0
   groundDetection: {fileID: 1919011632801312818}
@@ -162,9 +161,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   collider: {fileID: 1919011633792034767}
-  rb: {fileID: 1919011633792034755}
-  player: {fileID: 0}
-  argoRange: 2
 --- !u!61 &1919011633792034756
 BoxCollider2D:
   m_ObjectHideFlags: 0
