@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Health : MonoBehaviour
     [SerializeField]
     private float startingHealth;
     private Animator anim;
-    private bool dead;
+    private bool dead;   
     [SerializeField]
     Button btn;
 
@@ -27,6 +28,7 @@ public class Health : MonoBehaviour
         currenHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
     public void TakeDamage(float _damage)
     {
@@ -50,6 +52,9 @@ public class Health : MonoBehaviour
                 dead = true;
             }
 
+        }if(currenHealth == 0)
+        {
+            SceneManager.LoadScene("GamoverScense");
         }
     }
     private IEnumerator Invunerability()
@@ -65,4 +70,6 @@ public class Health : MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
     }
+
+    
 }
