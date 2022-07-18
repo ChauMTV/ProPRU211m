@@ -1,32 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TBossHP : MonoBehaviour
 {
-	public int health = 50;
+    public Slider slider;
+    public Color low;
+    public Color high;
+    public Vector3 offSet;
 
-	/*public GameObject deathEffect;*/
-
-	public bool isInvulnerable = false;
-
-	public void TakeDamage(int damage)
-	{
-		/*if (isInvulnerable)
-			return;*/
-
-		health -= damage;
-
-
-/*		if (health <= 0)
-		{
-			*//*Die();*//*
-		}*/
-	}
-
-/*	void Die()
-	{
-		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		Destroy(gameObject);
-	}*/
+    public void setHP(float hp , float maxHp)
+    {
+        slider.gameObject.SetActive(hp < maxHp);
+        slider.value = hp;
+        slider.maxValue = maxHp;
+        slider.fillRect.GetComponent<Image>().color = Color.Lerp(low, high, slider.normalizedValue);
+    }
+    public void Update()
+    {
+        
+        slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position+offSet);
+    }
 }

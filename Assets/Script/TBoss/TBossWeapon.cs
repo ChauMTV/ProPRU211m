@@ -25,7 +25,7 @@ public class TBossWeapon : MonoBehaviour
 		}
 	}
 
-	public void EnragedAttack()
+/*	public void EnragedAttack()
 	{
 		Vector3 pos = transform.position;
 		pos += transform.right * attackOffset.x;
@@ -36,7 +36,7 @@ public class TBossWeapon : MonoBehaviour
 		{
 			colInfo.GetComponent<Health>().TakeDamage(enragedAttackDamage);
 		}
-	}
+	}*/
 
 	void OnDrawGizmosSelected()
 	{
