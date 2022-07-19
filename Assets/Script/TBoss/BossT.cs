@@ -5,30 +5,27 @@ using UnityEngine;
 public class BossT : MonoBehaviour
 {
 	public Transform player;
-	public float hp = 10;
 	public bool isFlipped = false;
-	public float HitPoint;
-	public float MaxHitPoint = 5;
+	public float currentHp;
+	public float MaxHp = 10;
 	public TBossHP hpBar;
 	public Animator animator;
 
     public void Start()
     {
-		HitPoint = MaxHitPoint;
-		hpBar.setHP(HitPoint,MaxHitPoint);
+		currentHp = MaxHp;
+		hpBar.setMaxHP(MaxHp);
     }
 
 	public void TakeHit(float dmg)
     {
-		hp -= dmg;
-        HitPoint = dmg;
-        hpBar.setHP(HitPoint, MaxHitPoint);
-        if (hp < 0)
+
+        currentHp -= dmg;
+        hpBar.setHP(currentHp);
+        if (currentHp <= 0)
         {
 			animator.SetTrigger("die");
 			
-
-
 		}
     }
 
