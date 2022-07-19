@@ -10,6 +10,8 @@ public class Weapon : MonoBehaviour
     public GameObject pBulletPrefab;
     public GameObject powerupBullet;
     public GameObject currentBullet;
+    public float pBulletTimeCounter=10f;
+    public float pBulletTime;
     private bool direction;
     public bool isPoweredUp;
     float timeUntilFire;
@@ -28,6 +30,15 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isPoweredUp == true)
+        {
+            pBulletTime = pBulletTimeCounter;
+            pBulletTimeCounter -= Time.deltaTime;
+            if(pBulletTime <= 0)
+            {
+                isPoweredUp = false;
+            }
+        }
         direction = playerdirection.isRight;
         if (direction==true)
         {
@@ -43,7 +54,8 @@ public class Weapon : MonoBehaviour
     {
 
         float angle = playerdirection.isRight ? 0f : 180f;
-        
+       
+
         if (timeUntilFire < Time.time)
         {
             if (isPoweredUp == false)
@@ -54,7 +66,9 @@ public class Weapon : MonoBehaviour
             {
                 Instantiate(powerupBullet, GunPoint.position, Quaternion.Euler(new Vector3(0f, 0f, angle)));
             }
+            
             timeUntilFire = Time.time + fireRate;
+            
         }
    
 
