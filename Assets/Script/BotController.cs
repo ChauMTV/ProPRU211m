@@ -10,6 +10,7 @@ public class BotController : MonoBehaviour
     public float walkSpeed = 2f;
     public bool moveRight = true;
     public Transform groundDetection;
+
     public LayerMask groundLayer;
     public Collider2D collider;
     public Rigidbody2D rb;
