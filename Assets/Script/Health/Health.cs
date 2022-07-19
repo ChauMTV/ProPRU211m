@@ -60,6 +60,12 @@ public class Health : MonoBehaviour
 
         }
     }
+
+    public void AddHealth(float _value)
+    {
+        currenHealth = Mathf.Clamp(currenHealth + _value, 0, startingHealth);
+    }
+
     private IEnumerator Invunerability()
     {
         invulnerable = true;

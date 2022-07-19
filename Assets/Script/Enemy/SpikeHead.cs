@@ -16,11 +16,16 @@ public class SpikeHead : EnemyDamage
     private float checkTimer;
     private bool acttacking;
 
-    
+    private Vector3 originalPos;
 
     private void OnEnable()
     {
         Stop();
+    }
+    private void Start()
+    {
+        originalPos = new Vector3(gameObject.transform.position.x,
+            gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
     private void Update()
@@ -40,6 +45,10 @@ public class SpikeHead : EnemyDamage
         }
 
     }
+    private void restart()
+    {
+        gameObject.transform.position = originalPos;
+    }
 
     private void CheckForPlayer()
     {
@@ -57,30 +66,30 @@ public class SpikeHead : EnemyDamage
                 destination = directions[i];
                 checkTimer = 0;
             }
-
-
         }
-
-
     }
 
     private void CalculateDirections()
     {
-        directions[0] = transform.right * range; //right
-        directions[1] = -transform.right * range; //left
-        directions[2] = transform.up * range; //up
-        directions[3] = -transform.up * range; //down
+        //directions[0] = transform.right * range; //right
+        //directions[1] = -transform.right * range; //left
+        //directions[2] = transform.up * range; //up
+        directions[0] = -transform.up * range; //down
     }
     private void Stop()
     {
         destination = transform.position;// set destination as current so it stay
         acttacking = false;
-
+        Invoke("restart", 2);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
+        if (collision.tag != "Enemy")
+        {
+            Stop();
+        }
         //stop when hit sth
         Stop();
 

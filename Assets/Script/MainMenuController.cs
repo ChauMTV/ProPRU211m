@@ -24,7 +24,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Slectmap1()
     {
-        SceneManager.LoadScene("SceneTung");
+        SceneManager.LoadScene("Level1");
     }
 
     public void Slectmap2()
