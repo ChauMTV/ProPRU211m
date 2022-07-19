@@ -57,11 +57,7 @@ public class SpikeHead : EnemyDamage
                 destination = directions[i];
                 checkTimer = 0;
             }
-
-
         }
-
-
     }
 
     private void CalculateDirections()

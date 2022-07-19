@@ -36,4 +36,18 @@ public class Botreset : MonoBehaviour
 
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                if (enemies[i] != null)
+                {
+                    transform.position = initialPosition[i];
+                }
+
+            }
+        }
+    }
 }
