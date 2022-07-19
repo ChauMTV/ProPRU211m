@@ -17,8 +17,8 @@ public class HUD : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI coinText;
 
-    int score;
-    int coin;
+   public int score { get; private set;  }
+    public int coin { get; private set; }
 
 
     const string ScorePrefix = "Score: ";
@@ -28,22 +28,13 @@ public class HUD : MonoBehaviour
 
     #endregion
 
-    /// <summary>
-    /// Start is called before the first frame update
-    /// </summary>	
     void Start()
     {
         coinText.text = coins + score.ToString();
         scoreText.text = ScorePrefix + score.ToString();
         
-       
-        //scoreText.color = Color.white;
     }
 
-    /// <summary>
-    /// Adds the given points to the score
-    /// </summary>
-    /// <param name="points">points</param>
     public void AddPoints(int points)
     {
         score += points;
@@ -54,7 +45,5 @@ public class HUD : MonoBehaviour
         coin += points;
         coinText.text = coins + coin.ToString();
     }
-
-
 
 }

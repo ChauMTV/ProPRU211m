@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -21,7 +22,7 @@ public class Health : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private bool invulnerable;
-
+    
 
     public float currenHealth { get; private set; }
     // Start is called before the first frame update
@@ -57,13 +58,29 @@ public class Health : MonoBehaviour
                 GetComponent<Weapon>().enabled = false;
                 dead = true;
             }
-
+            
+          
         }
+        //if (currenHealth==0)
+        //{
+        //    SceneManager.LoadScene("GamoverScense");
+        //}
     }
 
     public void AddHealth(float _value)
     {
         currenHealth = Mathf.Clamp(currenHealth + _value, 0, startingHealth);
+    }
+
+    public void Respawn()
+    {
+        dead = false;
+        AddHealth(startingHealth);
+        anim.ResetTrigger("die");
+        anim.Play("Idle");
+        StartCoroutine(Invunerability());
+        GetComponent<CharacterMovement>().enabled = true;
+        GetComponent<Weapon>().enabled = true;
     }
 
     private IEnumerator Invunerability()

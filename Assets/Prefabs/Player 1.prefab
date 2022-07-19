@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 7350767652372923027}
   - component: {fileID: 7350767652372923244}
   - component: {fileID: 7350767652372923245}
+  - component: {fileID: 4945327138781566808}
   - component: {fileID: 1801900937}
   m_Layer: 10
   m_Name: Player 1
@@ -264,6 +265,8 @@ MonoBehaviour:
   pBulletPrefab: {fileID: 560860228665936397, guid: d1c51cf6216dc104eae3d660afcb3f32, type: 3}
   powerupBullet: {fileID: 0}
   currentBullet: {fileID: 0}
+  pBulletTimeCounter: 10
+  pBulletTime: 0
   isPoweredUp: 0
 --- !u!114 &7350767652372923244
 MonoBehaviour:
@@ -293,6 +296,19 @@ MonoBehaviour:
   btn: {fileID: 0}
   IFrameDuration: 0
   numberOfFlashes: 0
+--- !u!114 &4945327138781566808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7350767652372923028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6d2dbbbac2cea42a4bd34c47f2e538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointSound: {fileID: 0}
 --- !u!251 &1801900937
 PlatformEffector2D:
   m_ObjectHideFlags: 0

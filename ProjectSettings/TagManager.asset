@@ -11,6 +11,8 @@ TagManager:
   - bullet
   - Enemy
   - ResetPos
+  - CheckPoint
+  - Door
   layers:
   - Default
   - TransparentFX

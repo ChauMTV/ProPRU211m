@@ -14,12 +14,18 @@ public class MainMenuController : MonoBehaviour
     }
     public void Quitgame()
     {
-        SceneManager.LoadScene("Scense0");
+        Application.Quit();
+        UnityEditor.EditorApplication.isPaused = false;
     }
 
+    public void Restart()
+    {
+        SceneManager.
+            LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void Slectmap()
     {
-        SceneManager.LoadScene("Scense0");
+        SceneManager.LoadScene("Level1");
     }
 
     public void Slectmap1()
