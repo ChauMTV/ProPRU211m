@@ -17,7 +17,10 @@ public class Weapon : MonoBehaviour
     float timeUntilFire;
 
      CharacterMovement playerdirection;
-    [SerializeField] private AudioSource shootSoundEffect;
+    [Header("Shoot")]
+    [SerializeField] private AudioClip shootSoundEffect;
+    [Header("PowerUp")]
+    [SerializeField] private AudioClip powerupShootSE;
     private void Start()
     {
         playerdirection = gameObject.GetComponent<CharacterMovement>();
@@ -42,11 +45,11 @@ public class Weapon : MonoBehaviour
         direction = playerdirection.isRight;
         if (direction==true)
         {
-            GunPoint.localPosition = new Vector3(0.8f, -0.5f, 0);
+            GunPoint.localPosition = new Vector3(1f, -0.5f, 0);
         }
         if (direction==false)
         {
-            GunPoint.localPosition = new Vector3(-0.8f, -0.5f, 0);
+            GunPoint.localPosition = new Vector3(-1f, -0.5f, 0);
         }
     }
 
@@ -60,12 +63,12 @@ public class Weapon : MonoBehaviour
         {
             if (isPoweredUp == false)
             {
-                shootSoundEffect.Play();
+                SoundManager.instance.PlaySound(shootSoundEffect);
                 Instantiate(currentBullet, GunPoint.position, Quaternion.Euler(new Vector3(0f, 0f, angle)));
             }
             if (isPoweredUp == true)
             {
-                shootSoundEffect.Play();
+                SoundManager.instance.PlaySound(powerupShootSE);
                 Instantiate(powerupBullet, GunPoint.position, Quaternion.Euler(new Vector3(0f, 0f, angle)));
             }
             

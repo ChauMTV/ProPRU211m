@@ -15,13 +15,12 @@ public class MainMenuController : MonoBehaviour
     public void Quitgame()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPaused = false;
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void Restart()
     {
-        SceneManager.
-            LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Level1");
     }
     public void Slectmap()
     {
@@ -30,12 +29,12 @@ public class MainMenuController : MonoBehaviour
 
     public void Slectmap1()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level2");
     }
 
     public void Slectmap2()
     {
-        SceneManager.LoadScene("ScenceHuyen");
+        SceneManager.LoadScene("Level3");
     }
 
     public void BacktoMenu()

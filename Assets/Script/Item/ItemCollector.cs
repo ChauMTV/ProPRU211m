@@ -5,14 +5,15 @@ using UnityEngine;
 public class ItemCollector : MonoBehaviour
 {
     const int CoinPoints = 1;
-    [SerializeField] private AudioSource collectionSoundEffect;
+    [Header("Item")]
+    [SerializeField] private AudioClip collectionSoundEffect;
     
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("coin"))
         {
-            collectionSoundEffect.Play();
+            SoundManager.instance.PlaySound(collectionSoundEffect);
             Destroy(collision.gameObject);
             
             HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();

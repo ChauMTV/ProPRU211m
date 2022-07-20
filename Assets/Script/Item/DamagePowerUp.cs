@@ -4,13 +4,16 @@ public class DamagePowerUp : MonoBehaviour
 {
     //bool for check when player collide with item powerup
     public bool activated;
-    [SerializeField] private AudioSource powerUpSoundEffect;
+    [Header("PowerUp")]
+    [SerializeField] private AudioClip powerUpSoundEffect;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.tag == "Player")
         {
-            powerUpSoundEffect.Play();
+            SoundManager.instance.PlaySound(powerUpSoundEffect);
             GameObject player = collision.gameObject;
             //change the weapon to instantiate a poweredup bullet
             Weapon bullet = player.GetComponent<Weapon>();

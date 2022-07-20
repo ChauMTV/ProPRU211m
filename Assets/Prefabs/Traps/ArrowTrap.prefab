@@ -177,6 +177,7 @@ MonoBehaviour:
   - {fileID: 290038192852840815}
   - {fileID: 290038192348059140}
   - {fileID: 290038193804692851}
+  arrowShoot: {fileID: 8300000, guid: 03468a56217cedc47829d74235a2324f, type: 3}
 --- !u!1 &7138444559397705068
 GameObject:
   m_ObjectHideFlags: 0
