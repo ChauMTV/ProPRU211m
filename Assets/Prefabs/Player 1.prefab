@@ -294,8 +294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   btn: {fileID: 0}
-  IFrameDuration: 0
-  numberOfFlashes: 0
+  IFrameDuration: 1
+  numberOfFlashes: 3
 --- !u!114 &4945327138781566808
 MonoBehaviour:
   m_ObjectHideFlags: 0
