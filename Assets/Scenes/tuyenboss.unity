@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 33471058}
   - component: {fileID: 358694132}
   - component: {fileID: 358694133}
+  - component: {fileID: 358694134}
   m_Layer: 0
   m_Name: TBoss
   m_TagString: TBoss
@@ -622,6 +623,20 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 2147483647
+--- !u!114 &358694134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33471053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69074df0b42ffed47b91e42bb3f638fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1015421371}
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!1 &464184743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   rb: {fileID: 0}
+  isBossTakenDmg: 0
+  slider: {fileID: 0}
   prefabExplosion: {fileID: 0}
   damage: 50
 --- !u!114 &1199092312

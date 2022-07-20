@@ -7,6 +7,7 @@ public class TBossHP : MonoBehaviour
 {
     public Slider slider;
     public Vector3 offSet;
+    BulletScript bullet;
 
 
     public void setMaxHP(float Hp)
@@ -18,9 +19,29 @@ public class TBossHP : MonoBehaviour
     {
         slider.value = Hp;
     }
+
+    private void Awake()
+    {
+       slider.gameObject.SetActive(false);
+    }
     public void Update()
     {
-        
-       /* slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position+offSet);*/
+        if (bullet.isBossTakenDmg == true)
+        {
+            Debug.Log("A");
+
+        }
+        else
+        {
+            Debug.Log("B");
+        }
+    
+
+        /* slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position+offSet);*/
+        if (bullet.isBossTakenDmg == true)
+        {
+            slider.gameObject.SetActive(true);
+        }
+
     }
 }
