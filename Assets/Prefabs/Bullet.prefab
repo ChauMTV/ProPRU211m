@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 5506029071283629706}
-  prefabExplosion: {fileID: 4622016524002287189, guid: 20d3be60719f5a749bdbca1e752662ec, type: 3}
+  prefabExplosion: {fileID: 4131576999861324355, guid: c8e08abdd615f314186658f0b49ed261, type: 3}
   damage: 50
 --- !u!61 &-971486761692333242
 BoxCollider2D:

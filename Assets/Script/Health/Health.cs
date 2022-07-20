@@ -22,8 +22,8 @@ public class Health : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private bool invulnerable;
-    
 
+    [SerializeField] private AudioSource deathSoundEffect;
     public float currenHealth { get; private set; }
     // Start is called before the first frame update
 
@@ -43,6 +43,7 @@ public class Health : MonoBehaviour
         if (currenHealth > 0)
         {
             //hurt
+            deathSoundEffect.Play();
             anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
             //iframe
@@ -53,6 +54,7 @@ public class Health : MonoBehaviour
             //die
             if (!dead)
             {
+                deathSoundEffect.Play();
                 anim.SetTrigger("die");
                 GetComponent<CharacterMovement>().enabled = false;
                 GetComponent<Weapon>().enabled = false;

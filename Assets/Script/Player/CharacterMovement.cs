@@ -32,7 +32,13 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float rollingSpeed = 21f;
     [SerializeField] private float jumpspeed = 12f;
 
-    private enum MovementState { idle, running, jumping, falling, rolling };
+    //audio
+    [SerializeField] private AudioSource jumpSoundEffect;
+    
+
+
+
+   private enum MovementState { idle, running, jumping, falling, rolling };
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +74,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (isTouchGround==true && jump > 0)
         {
+            jumpSoundEffect.Play();
             isJump = true;
             JumpTimerCounter = jumpTime;
             rb.velocity = Vector2.up * jumpspeed;
@@ -76,6 +83,7 @@ public class CharacterMovement : MonoBehaviour
         {
             if (JumpTimerCounter > 0)
             {
+                jumpSoundEffect.Play();
                 rb.velocity = Vector2.up * jumpspeed;
                 JumpTimerCounter -= Time.deltaTime;
             }

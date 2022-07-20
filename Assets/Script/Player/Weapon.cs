@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
     float timeUntilFire;
 
      CharacterMovement playerdirection;
-
+    [SerializeField] private AudioSource shootSoundEffect;
     private void Start()
     {
         playerdirection = gameObject.GetComponent<CharacterMovement>();
@@ -54,16 +54,18 @@ public class Weapon : MonoBehaviour
     {
 
         float angle = playerdirection.isRight ? 0f : 180f;
-       
 
+        
         if (timeUntilFire < Time.time)
         {
             if (isPoweredUp == false)
             {
+                shootSoundEffect.Play();
                 Instantiate(currentBullet, GunPoint.position, Quaternion.Euler(new Vector3(0f, 0f, angle)));
             }
             if (isPoweredUp == true)
             {
+                shootSoundEffect.Play();
                 Instantiate(powerupBullet, GunPoint.position, Quaternion.Euler(new Vector3(0f, 0f, angle)));
             }
             
