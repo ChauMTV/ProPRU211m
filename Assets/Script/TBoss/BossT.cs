@@ -10,18 +10,42 @@ public class BossT : MonoBehaviour
 	public float MaxHp = 10;
 	public TBossHP hpBar;
 	public Animator animator;
+	[SerializeField]
+	GameObject fireBall;
+/*	float fireRate = 2f;
+	float nextFire;*/
+	public Transform BossFirePoint;
 
     public void Start()
     {
 		currentHp = MaxHp;
 		hpBar.setMaxHP(MaxHp);
+/*		nextFire = Time.time;*/
     }
+
+    public void Update()
+    {
+    }
+
+	public void TimeToFire()
+    {
+/*		if(Time.time > nextFire  && animator.Equals("range"))
+        {*/
+			Instantiate(fireBall,BossFirePoint.position, BossFirePoint.rotation);
+/*			nextFire = Time.time + fireRate;*/
+  /*      }*/
+    }
+
 
 	public void TakeHit(float dmg)
     {
 
         currentHp -= dmg;
         hpBar.setHP(currentHp);
+		if(currentHp <= 5)
+        {
+			animator.SetTrigger("dizzy");
+        }
         if (currentHp <= 0)
         {
 			animator.SetTrigger("die");

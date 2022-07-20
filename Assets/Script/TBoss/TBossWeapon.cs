@@ -5,10 +5,10 @@ using UnityEngine;
 public class TBossWeapon : MonoBehaviour
 {
 	public int attackDamage = 1;
-	public int enragedAttackDamage = 40;
+	/*public int enragedAttackDamage = 40;*/
 
 	public Vector3 attackOffset;
-	public float attackRange = 1.2f;
+	public float attackRange = 1.5f;
 	public LayerMask attackMask;
 
 	public void Attack()

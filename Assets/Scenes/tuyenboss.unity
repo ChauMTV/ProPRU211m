@@ -230,6 +230,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1945344905}
+  - {fileID: 270579377}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -475,6 +476,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7888f058b45de349a84f63da0fc8138, type: 3}
+--- !u!1 &270579376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 270579377}
+  m_Layer: 0
+  m_Name: FireBPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &270579377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270579376}
+  m_LocalRotation: {x: 0.008726558, y: 0, z: 0.999962, w: 0}
+  m_LocalPosition: {x: 0.38, y: -0.74, z: 0.01}
+  m_LocalScale: {x: 0.90277, y: 0.90277, z: 0.90277}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 33471056}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 180}
 --- !u!1 &316288931
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +601,8 @@ MonoBehaviour:
   MaxHp: 10
   hpBar: {fileID: 1945344909}
   animator: {fileID: 33471054}
+  fireBall: {fileID: 879730613227207467, guid: 6ec8a364e111dcc4e8359000c6903df9, type: 3}
+  BossFirePoint: {fileID: 270579377}
 --- !u!114 &358694133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +616,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 1
-  enragedAttackDamage: 40
   attackOffset: {x: -1, y: -1, z: 0}
   attackRange: 0.8
   attackMask:
