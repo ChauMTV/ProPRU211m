@@ -10,6 +10,7 @@ public class TBossWeapon : MonoBehaviour
 	public Vector3 attackOffset;
 	public float attackRange = 1.5f;
 	public LayerMask attackMask;
+	
 
 	public void Attack()
 	{
@@ -18,11 +19,11 @@ public class TBossWeapon : MonoBehaviour
 		pos += transform.up * attackOffset.y;
 
 		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-		if (colInfo != null)
-		{
-			colInfo.GetComponent<Health>().TakeDamage(attackDamage);
+/*		if (colInfo == null)
+		{*/
+            colInfo.GetComponent<Health>().TakeDamage(attackDamage);
 		
-		}
+	/*	}*/
 	}
 
 /*	public void EnragedAttack()

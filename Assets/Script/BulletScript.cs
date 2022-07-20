@@ -68,8 +68,13 @@ public class BulletScript : MonoBehaviour
         {
            
             collision.GetComponent<BossT>().TakeHit(1);
+
         }
-        Destroy(gameObject);
+        if (!collision.gameObject.CompareTag("FireBall"))
+        {
+            Destroy(gameObject);
+        }
+       
     }
 
     //end destroy 

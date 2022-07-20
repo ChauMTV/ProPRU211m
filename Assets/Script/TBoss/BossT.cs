@@ -15,6 +15,7 @@ public class BossT : MonoBehaviour
 /*	float fireRate = 2f;
 	float nextFire;*/
 	public Transform BossFirePoint;
+	public bool isdizzy = false;
 
     public void Start()
     {
@@ -39,7 +40,10 @@ public class BossT : MonoBehaviour
 
 	public void TakeHit(float dmg)
     {
-
+        if (isdizzy)
+        {
+			return;
+        }
         currentHp -= dmg;
         hpBar.setHP(currentHp);
 		if(currentHp <= 5)

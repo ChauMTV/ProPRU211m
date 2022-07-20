@@ -603,6 +603,7 @@ MonoBehaviour:
   animator: {fileID: 33471054}
   fireBall: {fileID: 879730613227207467, guid: 6ec8a364e111dcc4e8359000c6903df9, type: 3}
   BossFirePoint: {fileID: 270579377}
+  isdizzy: 0
 --- !u!114 &358694133
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,16 +26,18 @@ public class TBossRun : StateMachineBehaviour
         Vector2 newPo = Vector2.MoveTowards(rb.position, tagget, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPo);
 
-        if (Vector2.Distance(player.position, rb.position) <= attackRange)
-        {
-            animator.SetTrigger("Melee");
-        }
+
+            if (Vector2.Distance(player.position, rb.position) <= attackRange)
+            {
+                animator.SetTrigger("Melee");
+            }
+
     }
 
      
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("Melee");
+   /*     animator.ResetTrigger("Melee");*/
     }
 
 

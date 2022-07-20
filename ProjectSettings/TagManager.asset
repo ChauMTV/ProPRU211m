@@ -11,6 +11,7 @@ TagManager:
   - bullet
   - Enemy
   - TBoss
+  - FireBall
   layers:
   - Default
   - TransparentFX
