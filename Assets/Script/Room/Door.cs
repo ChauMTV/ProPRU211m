@@ -39,9 +39,9 @@ public class Door : MonoBehaviour
             //}
             if (SceneManager.GetActiveScene().name=="Level1")
             {
-                SceneManager.LoadScene("ScenceHuyen");
+                SceneManager.LoadScene("Level2");
             }
-            else if (SceneManager.GetActiveScene().name == "ScenceHuyen")
+            else if (SceneManager.GetActiveScene().name == "Level2")
             {
                 SceneManager.LoadScene("Level3");
             }

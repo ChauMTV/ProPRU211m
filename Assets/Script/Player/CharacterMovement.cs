@@ -32,13 +32,14 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float rollingSpeed = 21f;
     [SerializeField] private float jumpspeed = 12f;
 
+    [Header("Jump")]
     //audio
-    [SerializeField] private AudioSource jumpSoundEffect;
-    
+    [SerializeField] private AudioClip jumpSoundEffect;
+    //[Header("Move")]
+    //[SerializeField] private AudioClip WalkingSE;
 
 
-
-   private enum MovementState { idle, running, jumping, falling, rolling };
+    private enum MovementState { idle, running, jumping, falling, rolling };
 
     // Start is called before the first frame update
     void Start()
@@ -74,7 +75,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (isTouchGround==true && jump > 0)
         {
-            jumpSoundEffect.Play();
+            SoundManager.instance.PlaySound(jumpSoundEffect);
             isJump = true;
             JumpTimerCounter = jumpTime;
             rb.velocity = Vector2.up * jumpspeed;
@@ -83,7 +84,7 @@ public class CharacterMovement : MonoBehaviour
         {
             if (JumpTimerCounter > 0)
             {
-                jumpSoundEffect.Play();
+               
                 rb.velocity = Vector2.up * jumpspeed;
                 JumpTimerCounter -= Time.deltaTime;
             }
@@ -145,7 +146,7 @@ public class CharacterMovement : MonoBehaviour
 
             else if (horizontalMove > 0f)
             {
-                
+               
                 isRight = true;
                 state = MovementState.running;
                 sprite.flipX = false;
