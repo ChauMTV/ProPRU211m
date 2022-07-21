@@ -1,17 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BulletScript : MonoBehaviour
 {
     public float speed = 1f;
     public Rigidbody2D rb;
-    public bool isBossTakenDmg;
 
-
-
-
+ 
 
     //start destroy
     #region Fields
@@ -67,26 +63,15 @@ public class BulletScript : MonoBehaviour
   private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.CompareTag("TBoss"))
-        {
- 
-            collision.GetComponent<BossT>().TakeHit(1);
-            isBossTakenDmg = true;
-
-        }
-        if (!collision.gameObject.CompareTag("FireBall"))
-        {
-            Destroy(gameObject);
-        }
-       
+        Destroy(gameObject);
     }
 
     //end destroy 
 
-    public void Awake()
+    void Start()
     {
+      
 
-        isBossTakenDmg = false;
     }
 
    
