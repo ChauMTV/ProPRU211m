@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ba9d0fbb0e4613e48a4849e3aeb20d78
+=======
+<<<<<<< HEAD:Assets/Prefabs/Bullet 1.prefab.meta
+guid: f2d9e42eab50d404ab6bf04373aa0dd0
+=======
+guid: ba9d0fbb0e4613e48a4849e3aeb20d78
+>>>>>>> 6cfab383301d56a0964126afdf496a397bdb5f16:Assets/Prefabs/BotFly.prefab.meta
+>>>>>>> 6cfab383301d56a0964126afdf496a397bdb5f16
 PrefabImporter:
   externalObjects: {}
   userData: 
