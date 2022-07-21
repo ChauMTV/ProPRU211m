@@ -63,7 +63,7 @@ public class Weapon : MonoBehaviour
         {
             if (isPoweredUp == false)
             {
-                SoundManager.instance.PlaySound(shootSoundEffect);
+                /*SoundManager.instance.PlaySound(shootSoundEffect);*/
                 Instantiate(currentBullet, GunPoint.position, Quaternion.Euler(new Vector3(0f, 0f, angle)));
             }
             if (isPoweredUp == true)

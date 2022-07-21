@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BulletScript : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 10f;
     public Rigidbody2D rb;
     public bool isBossTakenDmg;
 
@@ -66,7 +66,7 @@ public class BulletScript : MonoBehaviour
     #endregion
   private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        Debug.Log(collision.name);
         if (collision.gameObject.CompareTag("TBoss"))
         {
  

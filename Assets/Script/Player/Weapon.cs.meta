@@ -3,7 +3,14 @@ guid: e49555331307c0446b3d3a01c9c5ffce
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - GunPoint: {instanceID: 0}
+  - bulletPrefab: {fileID: 4399005074495849062, guid: f2d9e42eab50d404ab6bf04373aa0dd0, type: 3}
+  - pBulletPrefab: {fileID: 4399005074495849062, guid: f2d9e42eab50d404ab6bf04373aa0dd0, type: 3}
+  - powerupBullet: {fileID: 4399005074495849062, guid: f2d9e42eab50d404ab6bf04373aa0dd0, type: 3}
+  - currentBullet: {fileID: 4399005074495849062, guid: f2d9e42eab50d404ab6bf04373aa0dd0, type: 3}
+  - shootSoundEffect: {fileID: 8300000, guid: e15482d77708bd04ab561b6e6de1248e, type: 3}
+  - powerupShootSE: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
