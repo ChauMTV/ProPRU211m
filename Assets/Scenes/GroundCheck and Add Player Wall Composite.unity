@@ -3221,7 +3221,7 @@ GameObject:
   - component: {fileID: 2051242654}
   - component: {fileID: 2051242656}
   - component: {fileID: 2051242655}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3281,8 +3281,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1498003801
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -24911,9 +24911,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1931243348, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350767651579654924, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350767652372923025, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 320
+      objectReference: {fileID: 0}
     - target: {fileID: 7350767652372923028, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350767652372923028, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7350767652372923030, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
       propertyPath: m_RootOrder
@@ -24958,6 +24974,18 @@ PrefabInstance:
     - target: {fileID: 7350767652372923030, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350767652372923245, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
+      propertyPath: IFrameDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350767652372923245, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
+      propertyPath: numberOfFlashes
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350767652737333776, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f29a4f6b00d6049bf813ab6849b2ef, type: 3}
