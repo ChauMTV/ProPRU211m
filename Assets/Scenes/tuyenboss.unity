@@ -276,7 +276,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -605,6 +605,7 @@ MonoBehaviour:
   fireBall: {fileID: 879730613227207467, guid: 6ec8a364e111dcc4e8359000c6903df9, type: 3}
   BossFirePoint: {fileID: 270579377}
   isdizzy: 0
+  slider: {fileID: 1015421371}
 --- !u!114 &358694133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2109,7 +2110,6 @@ MonoBehaviour:
   speed: 1
   rb: {fileID: 0}
   isBossTakenDmg: 0
-  slider: {fileID: 0}
   prefabExplosion: {fileID: 0}
   damage: 50
 --- !u!114 &1199092312
@@ -4005,7 +4005,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945344904}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69074df0b42ffed47b91e42bb3f638fd, type: 3}
   m_Name: 

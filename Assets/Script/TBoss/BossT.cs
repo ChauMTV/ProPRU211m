@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BossT : MonoBehaviour
 {
 	public Transform player;
@@ -15,9 +15,11 @@ public class BossT : MonoBehaviour
 /*	float fireRate = 2f;
 	float nextFire;*/
 	public Transform BossFirePoint;
-	public bool isdizzy = false;
+	public bool isdizzy = false	;
+	public Slider slider;
+	BulletScript bullet;
 
-    public void Start()
+	public void Start()
     {
 		currentHp = MaxHp;
 		hpBar.setMaxHP(MaxHp);
@@ -26,7 +28,14 @@ public class BossT : MonoBehaviour
 
     public void Update()
     {
-    }
+        if (currentHp < 10) { slider.gameObject.SetActive(true); }
+
+		
+
+	
+
+	}
+
 
 	public void TimeToFire()
     {
